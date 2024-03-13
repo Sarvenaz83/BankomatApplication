@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <title>BankomatApp</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="app">
+        <h1>BankomatApp</h1>
+        <div id="login-form" style="display: block;">
+            <h2>Logga in</h2>
+            <input type="text" id="username" placeholder="Användarnamn">
+            <input type="password" id="password" placeholder="Lösenord">
+            <button onclick="login()">Logga in</button>
+        </div>
+        <div id="account-info" style="display: none;">
+            <h2>Välkommen, <span id="user-name"></span></h2>
+            <p>Saldo: <span id="balance"></span> kr</p>
+            <input type="number" id="amount" placeholder="Belopp">
+            <button onclick="deposit()">Insättning</button>
+            <button onclick="withdraw()">Uttag</button>
+            <button onclick="logout()">Logga ut</button>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>

@@ -1,20 +1,23 @@
 name: Deploy to Production
 
 on:
-  pull_request:
+  push:
     branches:
       - production
-    types:
-      - closed
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     environment: production
-    if: github.event.pull_request.merged == true
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build application
+        run: npm run build
 
       - name: Deploy to Production Environment
         run: echo "Deploying to Production Environment..."
