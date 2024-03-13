@@ -1,0 +1,55 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #4CAF50;
+    /* Grön bakgrundsfärg */
+    color: white;
+    /* Vit textfärg */
+    text-align: center;
+    /* Centrerar text */
+}
+
+#app {
+    background-color: rgb(24, 83, 1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(72, 179, 104, 0.1);
+    width: 80%;
+    /* Anpassa bredd efter behov */
+    max-width: 600px;
+    /* Anpassa maxbredd efter behov */
+}
+
+input,
+button {
+    font-size: 1.25rem;
+    margin: 10px 0;
+    display: block;
+    /* Gör att elementen blockerar varandra, vilket gör det lättare att centrera dem */
+    width: 100%;
+    /* Anpassa bredd efter behov */
+    max-width: 300px;
+    /* Anpassa maxbredd efter behov */
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 0.25rem;
+}
+
+button {
+    font-size: 1.5rem;
+    padding: 10px;
+    background-color: #49aa36;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #58e09c;
+}
