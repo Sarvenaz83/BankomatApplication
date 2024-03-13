@@ -1,20 +1,23 @@
-name: Deploy to Development
+name: Deploy to Staging
 
 on:
-  pull_request:
+  push:
     branches:
       - development
-    types:
-      - closed
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment: development
-    if: github.event.pull_request.merged == true
+    environment: staging
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Deploy to Development Environment
-        run: echo "Deploying to Development Environment..."
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build application
+        run: npm run build
+
+      - name: Deploy to Staging Environment
+        run: echo "Deploying to Staging Environment..."

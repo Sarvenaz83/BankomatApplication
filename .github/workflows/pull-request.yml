@@ -12,19 +12,19 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Setup .NET
-        uses: actions/setup-dotnet@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
         with:
-          dotnet-version: 7.0.x
+          node-version: 14
 
-      - name: Format the code
-        run: dotnet format --verbosity diagnostic --verify-no-changes
+      - name: Install dependencies
+        run: npm install
 
-      - name: Restore dependencies
-        run: dotnet restore --disable-parallel
+      - name: Lint and format the code
+        run: npm run lint && npm run format
 
       - name: Build the solution
-        run: dotnet build --no-restore
+        run: npm run build
 
-      - name: Run all tests
-        run: dotnet test --no-build --verbosity normal --no-restore
+      - name: Run tests
+        run: npm test
